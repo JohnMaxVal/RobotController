@@ -56,7 +56,6 @@ namespace Robot.Device
         /// Provide algorithm for move
         /// </summary>
         public void Move()
-
         {
             foreach (var command in _commands)
             {
