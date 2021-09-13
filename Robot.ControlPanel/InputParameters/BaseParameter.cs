@@ -32,7 +32,7 @@ namespace Robot.ControlPanel.InputParameters
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        IParameter Validator.IParameterValidator<IParameter>.Validate(string input)
+        public IParameter Validate(string input)
         {
             if(string.IsNullOrEmpty(input))
             {
