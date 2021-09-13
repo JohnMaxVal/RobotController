@@ -6,7 +6,6 @@ using System.Text;
 
 namespace Robot.Tests.ControlPanelTests
 {
-    // comment
     using Panel = ControlPanel.ControlPanel;
 
     [TestFixture]
