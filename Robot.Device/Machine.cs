@@ -17,8 +17,7 @@ namespace Robot.Device
         /// <summary>
         /// Specify the version of <see cref="IMachine"/> instance
         /// </summary>
-        private static readonly int _version;
-        public static int Version => _version;
+        public static int Version { get; protected set; }
 
         private Panel _panel;
 
@@ -31,16 +30,11 @@ namespace Robot.Device
         private List<MoveCommand> _commands;
         internal List<MoveCommand> Commands => _commands;
 
+        /// <summary>
+        /// Specify current <see cref="Position2D"/> instance of <see cref="IMachine"/> object
+        /// </summary>
         private Position2D _currentPosition;
         public Position2D CurrentPosition => _currentPosition;
-
-        /// <summary>
-        /// Initialize <see cref="IMachine"/> static members
-        /// </summary>
-        static Machine()
-        {
-            _version++;
-        }
 
         /// <summary>
         /// Constructs a new <see langword="Machine""/>
@@ -55,6 +49,7 @@ namespace Robot.Device
             _parameters = new List<IParameter>();
             _commands = new List<MoveCommand>();
             RegisterEvents();
+            Version++;
         }
 
         /// <summary>
